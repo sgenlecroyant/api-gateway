@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "sgenlecroyant/discovery-server"
+        IMAGE_NAME = "sgenlecroyant/api-gateway"
         TAG = "0.0.1"
     }
 
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: 'pre-develop', url: 'https://github.com/sgenlecroyant/discovery-server.git'
+                git branch: 'pre-develop', url: 'https://github.com/sgenlecroyant/api-gateway.git'
             }
         }
 

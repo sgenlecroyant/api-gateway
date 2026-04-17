@@ -1,5 +1,5 @@
 services:
-  discovery-server:
+  pi-gateway:
     image: sgenlecroyant/api-gateway:latest
     container_name: api-gateway
     restart: always
