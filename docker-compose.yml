@@ -1,0 +1,22 @@
+services:
+  discovery-server:
+    image: sgenlecroyant/api-gateway:latest
+    container_name: api-gateway
+    restart: always
+    ports:
+      - "1015:1015"
+    environment:
+      SPRING_PROFILES_ACTIVE: "prod"
+      SERVER_SSL_ENABLED: "true"
+      SERVER_SSL_KEY_STORE: /app/gateway.p12
+      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
+      SERVER_SSL_KEY_ALIAS: gateway
+
+    volumes:
+      - /opt/sales-project/security-certificates/gateway.p12:/app/gateway.p12
+    networks:
+      - backend
+
+networks:
+  backend:
+    external: true
