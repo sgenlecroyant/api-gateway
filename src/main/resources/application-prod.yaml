@@ -1,0 +1,14 @@
+
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 1015
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    secure-port: 443
+    secure-port-enabled: true
+
