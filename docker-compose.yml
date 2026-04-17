@@ -12,6 +12,7 @@ services:
       SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
       SERVER_SSL_KEY_ALIAS: gateway
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+      eureka.client.service-url.defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
 
     volumes:
       - /opt/sales-project/security-certificates/gateway.p12:/app/gateway.p12
