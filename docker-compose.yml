@@ -1,23 +1,22 @@
 services:
   pi-gateway:
-    image: sgenlecroyant/api-gateway:latest
+    image: sgenlecroyant/system:api-gateway-v1
     container_name: api-gateway
     restart: always
     ports:
       - "1015:1015"
     environment:
       SPRING_PROFILES_ACTIVE: "prod"
-      SERVER_SSL_ENABLED: "true"
-      SERVER_SSL_KEY_STORE: /app/gateway.p12
-      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
-      SERVER_SSL_KEY_ALIAS: gateway
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+#      SERVER_SSL_ENABLED: "true"
+#      SERVER_SSL_KEY_STORE: /app/gateway.p12
+#      SERVER_SSL_KEY_STORE_PASSWORD: ${SERVER_SSL_KEY_STORE_PASSWORD}
+#      SERVER_SSL_KEY_ALIAS: gateway
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
       eureka.client.service-url.defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
-      JAVA_TOOL_OPTIONS: "-Djavax.net.ssl.trustStore=/app/truststore.p12 -Djavax.net.ssl.trustStorePassword=sgensgen"
 
-    volumes:
-      - /opt/sales-project/security-certificates/gateway.p12:/app/gateway.p12
-      - /opt/sales-project/security-certificates/truststore.p12:/app/truststore.p12
+#    volumes:
+#      - /opt/sales-project/security-certificates/gateway.p12:/app/gateway.p12
+#      - /opt/sales-project/security-certificates/truststore.p12:/app/truststore.p12
     networks:
       - backend
 
