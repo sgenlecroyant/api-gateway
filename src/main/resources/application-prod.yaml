@@ -4,18 +4,18 @@ spring:
     name: api-gateway
 server:
   port: 1015
-  ssl:
-    enabled: true
-    key-password: sgensgen
-    key-store: classpath:eureka.p12
-    key-alias: eureka
+#  ssl:
+#    enabled: true
+#    key-password: sgensgen
+#    key-store: classpath:eureka.p12
+#    key-alias: eureka
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: "https://sgen:sgen@31.97.79.214:1010/eureka"
-  instance:
-    secure-port: 443
-    secure-port-enabled: true
+      defaultZone: "https://sgen:sgen@https://discovery-server.team-project.tech/eureka"
+#  instance:
+#    secure-port: 443
+#    secure-port-enabled: true
 
