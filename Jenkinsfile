@@ -6,8 +6,8 @@ pipeline {
     }
 
     environment {
-        IMAGE_NAME = "sgenlecroyant/api-gateway"
-        TAG = "0.0.1"
+        IMAGE_NAME = "sgenlecroyant/system"
+        TAG = "api-gateway-v1"
     }
 
     stages {
@@ -22,7 +22,6 @@ pipeline {
             steps {
                 sh """
                 docker build -t $IMAGE_NAME:$TAG .
-                docker tag $IMAGE_NAME:$TAG $IMAGE_NAME:latest
                 """
             }
         }
@@ -37,7 +36,6 @@ pipeline {
                     sh """
                     echo $PASS | docker login -u $USER --password-stdin
                     docker push $IMAGE_NAME:$TAG
-                    docker push $IMAGE_NAME:latest
                     """
                 }
             }

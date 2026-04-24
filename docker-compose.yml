@@ -1,6 +1,6 @@
 services:
   pi-gateway:
-    image: sgenlecroyant/api-gateway:latest
+    image: sgenlecroyant/system:api-gateway-v1
     container_name: api-gateway
     restart: always
     ports:
